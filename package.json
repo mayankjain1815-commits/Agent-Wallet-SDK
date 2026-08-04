@@ -1,0 +1,71 @@
+{
+  "name": "agentwallet-sdk",
+  "version": "6.2.1",
+  "description": "Non-custodial AI agent wallet SDK. ERC-8004 identity & reputation registries, mutual stake escrow, x402 payments, x402 upto billing policy accounting, 17-chain CCTP bridging, ERC-6551 TBA, SpendingPolicy guardrails, Uniswap V3 swap. The agent holds the keys.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "agent-wallet",
+    "ai-agent",
+    "crypto",
+    "web3",
+    "erc-6551",
+    "x402",
+    "agentic-wallet",
+    "base",
+    "non-custodial",
+    "spend-limits",
+    "machine-payments",
+    "agent-payments",
+    "autonomous-agent",
+    "token-bound-account",
+    "erc-8004",
+    "reputation",
+    "validation",
+    "mutual-stake-escrow",
+    "cctp-bridge"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/up2itnow0822/agent-wallet-sdk.git"
+  },
+  "author": "AgentNexus",
+  "dependencies": {
+    "viem": "2.46.0"
+  },
+  "peerDependencies": {
+    "@solana/web3.js": ">=1.87.0"
+  },
+  "peerDependenciesMeta": {
+    "@solana/web3.js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.1.0",
+    "globals": "^16.5.0",
+    "typescript": "5.3.3",
+    "vitest": "4.0.18",
+    "wrangler": "^4.72.0"
+  },
+  "homepage": "https://github.com/up2itnow0822/agent-wallet-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/up2itnow0822/agent-wallet-sdk/issues"
+  }
+}
