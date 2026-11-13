@@ -76,6 +76,20 @@ const DEFAULT_RPC: Record<string, string> = {
 };
 
 /**
+ * Canonical chain keys understood by `createWallet()`, keyed by chain ID.
+ * viem's `chain.name` is a display name ("Base Sepolia", "Arbitrum One"),
+ * not the key used by the core wallet registry.
+ */
+const CHAIN_KEY_BY_ID: Record<number, string> = {
+  [base.id]: 'base',
+  [baseSepolia.id]: 'base-sepolia',
+  [mainnet.id]: 'ethereum',
+  [arbitrum.id]: 'arbitrum',
+  [optimism.id]: 'optimism',
+  [polygon.id]: 'polygon',
+};
+
+/**
  * Resolve a chain object from either a name string or a numeric chain id.
  * Tries CHAIN_MAP by name, then falls back to scanning by chainId.
  *
@@ -190,7 +204,7 @@ export function walletFromEnv(options?: {
   // ── Delegate to core createWallet ────────────────────────────────────────
   return createWallet({
     accountAddress: walletAddress as Address,
-    chain: chain.name.toLowerCase() as any,
+    chain: (CHAIN_KEY_BY_ID[chain.id] ?? 'base') as any,
     rpcUrl,
     walletClient,
   });
