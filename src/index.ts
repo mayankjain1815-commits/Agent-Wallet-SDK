@@ -9,7 +9,7 @@ import {
   type Chain,
   zeroAddress,
 } from 'viem';
-import { base, baseSepolia, mainnet, arbitrum, polygon } from 'viem/chains';
+import { base, baseSepolia, mainnet, arbitrum, optimism, polygon } from 'viem/chains';
 import { AgentAccountV2Abi, AgentAccountFactoryV2Abi } from './abi.js';
 import type {
   AgentWalletConfig,
@@ -58,6 +58,7 @@ const CHAINS: Record<string, Chain> = {
   'base-sepolia': baseSepolia,
   ethereum: mainnet,
   arbitrum,
+  optimism,
   polygon,
 };
 
